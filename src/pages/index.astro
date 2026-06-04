@@ -1,0 +1,183 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Home">
+
+  <!-- Hero -->
+  <section class="relative bg-sage-800 text-white overflow-hidden min-h-[600px] flex items-center">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+            <circle cx="30" cy="30" r="1.5" fill="currentColor"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+      </svg>
+    </div>
+
+    <!-- Gradient overlay on the right for a photo slot -->
+    <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-sage-900/60 to-transparent pointer-events-none hidden lg:block"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-sage-700/60 border border-sage-600 rounded-full px-4 py-1.5 text-sm text-cream-200 mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+          Rare Breed — Thriving Community
+        </div>
+        <h1 class="font-serif text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          Portland Sheep<br/>
+          <span class="text-cream-300">Breeders' Group</span>
+        </h1>
+        <p class="text-lg text-cream-200 leading-relaxed mb-8 max-w-lg">
+          The most popular rare breed for smallholders. We support breeders, enthusiasts and newcomers with information, advice and a welcoming community.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/about/" class="inline-flex items-center gap-2 bg-cream-100 text-sage-800 hover:bg-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Discover the Breed
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/membership/" class="inline-flex items-center gap-2 border border-cream-300 text-cream-100 hover:bg-sage-700 font-semibold px-6 py-3 rounded-xl transition-colors">
+            Join the Group
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder for hero image — replace with real photo -->
+      <div class="hidden lg:flex items-center justify-center">
+        <div class="w-96 h-80 rounded-3xl bg-sage-700/50 border-2 border-sage-600/40 flex flex-col items-center justify-center text-sage-400 gap-3">
+          <svg class="w-16 h-16 opacity-40" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          <p class="text-sm opacity-60">Hero image</p>
+          <p class="text-xs opacity-40">Replace via CMS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- News banner -->
+  <section class="bg-bark-500 text-white py-4 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-3">
+      <span class="bg-white/20 rounded-full px-3 py-0.5 text-xs font-semibold uppercase tracking-wider">Latest News</span>
+      <p class="text-sm">
+        <strong>Carole Muddiman</strong> judging the 2025 Premier Shows &mdash;
+        Midland Premier Champion: Hannah Stott &mdash;
+        Northern Premier at Royal Lancashire Show, July 18–20 &mdash;
+        Southern Premier at New Forest Show, July 29–31
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Portland Sheep — 3 columns -->
+  <section class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-serif text-4xl text-sage-800 mb-4">Why Choose Portland Sheep?</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">Hardy, versatile and full of character — Portland sheep are ideally suited to smallholders and rare breed enthusiasts alike.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/>`,
+            title: 'Hardy & Adaptable',
+            body: 'Originating from Portland Bill, these sheep thrive on rough, exposed land and require minimal intervention — ideal for low-input farming.',
+          },
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`,
+            title: 'Excellent Wool',
+            body: 'Portland wool is finely textured with a warm, creamy fleece. Highly sought after by hand-spinners and textile artists.',
+          },
+          {
+            icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>`,
+            title: 'Friendly Community',
+            body: 'Join hundreds of breeders across the UK. Access newsletters, free stock listings, show results, husbandry advice and much more.',
+          },
+        ].map(card => (
+          <div class="bg-white rounded-2xl p-8 border border-cream-200 hover:shadow-lg transition-shadow">
+            <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={card.icon}></svg>
+            </div>
+            <h3 class="font-serif text-xl text-sage-800 mb-3">{card.title}</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">{card.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- About strip with image placeholder -->
+  <section class="bg-cream-100 py-24 px-4">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div class="order-2 lg:order-1">
+        <h2 class="font-serif text-4xl text-sage-800 mb-6">A Rare Breed Worth Preserving</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          The Portland is one of Britain's oldest sheep breeds, with a history stretching back over a thousand years on the Isle of Portland in Dorset. Small, hardy and tan-faced, they are a Conservation Grade breed, classified as Vulnerable by the Rare Breeds Survival Trust.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          The Portland Sheep Breeders' Group works to promote and protect the breed, maintaining a studbook and supporting a network of dedicated keepers across the UK and beyond.
+        </p>
+        <a href="/about/" class="inline-flex items-center gap-2 text-sage-700 font-semibold hover:text-sage-500 transition-colors">
+          Read the full history
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="aspect-[4/3] rounded-3xl bg-sage-200 border-2 border-sage-300/40 flex flex-col items-center justify-center text-sage-400 gap-3">
+          <svg class="w-16 h-16 opacity-40" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          <p class="text-sm opacity-60">About section image</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Show calendar -->
+  <section class="py-24 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl text-sage-800 mb-4">2025 Show Calendar</h2>
+        <p class="text-gray-500">Premier shows judged by Carole Muddiman in 2025.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { name: 'Midland Premier', location: 'TBC', dates: 'Results in', note: 'Champion: Hannah Stott — Shearling Ewe. Reserve: Tricia Robarts.', done: true },
+          { name: 'Northern Premier', location: 'Royal Lancashire Show', dates: 'July 18–20, 2025', note: 'Judges: Carole Muddiman', done: false },
+          { name: 'Southern Premier', location: 'New Forest Show', dates: 'July 29–31, 2025', note: 'Judges: Carole Muddiman', done: false },
+        ].map(show => (
+          <div class={`rounded-2xl p-6 border ${show.done ? 'bg-cream-100 border-cream-300' : 'bg-white border-sage-200 hover:shadow-md transition-shadow'}`}>
+            <div class="flex items-start justify-between mb-3">
+              <h3 class="font-serif text-lg text-sage-800">{show.name}</h3>
+              {show.done && <span class="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">Results in</span>}
+              {!show.done && <span class="text-xs bg-sage-100 text-sage-700 px-2 py-0.5 rounded-full">Upcoming</span>}
+            </div>
+            <p class="text-sm font-medium text-bark-500 mb-1">{show.location}</p>
+            <p class="text-sm text-gray-500 mb-3">{show.dates}</p>
+            <p class="text-xs text-gray-400 leading-relaxed">{show.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership CTA -->
+  <section class="py-24 px-4 bg-sage-700 text-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-serif text-4xl mb-6">Join the Portland Sheep Breeders' Group</h2>
+      <p class="text-cream-200 leading-relaxed mb-4">
+        Adult membership from just <strong class="text-white">£15/year</strong>. You don't need to keep sheep to join.
+      </p>
+      <ul class="text-sm text-cream-300 grid grid-cols-2 gap-2 max-w-md mx-auto mb-10 text-left">
+        {['Welcome pack', 'Regular newsletters', 'Free stock listings', 'Show invitations', 'Email news alerts', 'Annual calendar', 'Husbandry support', 'Members-only area'].map(b => (
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            {b}
+          </li>
+        ))}
+      </ul>
+      <a href="/membership/" class="inline-flex items-center gap-2 bg-white text-sage-800 hover:bg-cream-100 font-semibold px-8 py-4 rounded-xl text-lg transition-colors">
+        Become a Member
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+</Layout>

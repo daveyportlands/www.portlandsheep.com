@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Husbandry & Management">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Care & Management</p>
+      <h1 class="font-serif text-5xl mb-6">Husbandry &amp; Management</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Practical guidance for keeping Portland sheep through every season.</p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 py-16">
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { title: "Shepherd's Year", href: '/husbandry/', desc: 'A month-by-month guide to the key tasks and events in the Portland shepherd\'s calendar.' },
+        { title: 'Lambing', href: '/husbandry/lambing/', desc: 'Preparation, signs of labour, assistance, lamb care and record-keeping.' },
+        { title: 'Health Tasks', href: '/husbandry/health/', desc: 'Vaccinations, worming, foot care and common health issues in Portland sheep.' },
+        { title: 'Tupping', href: '/husbandry/tupping/', desc: 'Ram selection, condition scoring, introduction and flushing guidance.' },
+        { title: 'Feeding & Nutrition', href: '/husbandry/', desc: 'Grazing management, supplementary feeding, minerals and body condition scoring.' },
+        { title: 'Fleece & Shearing', href: '/husbandry/', desc: 'Shearing timing, preparation, and storing Portland fleeces correctly.' },
+      ].map(card => (
+        <a href={card.href} class="group bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow block">
+          <h3 class="font-serif text-lg text-sage-800 mb-2 group-hover:text-sage-600 transition-colors">{card.title}</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">{card.desc}</p>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</Layout>

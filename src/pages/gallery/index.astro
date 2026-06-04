@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Gallery">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Photos</p>
+      <h1 class="font-serif text-5xl mb-6">Gallery</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Portland sheep from flocks across the UK.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <p class="text-gray-500 mb-8 text-sm">Images are managed via the <a href="/admin/" class="text-sage-600 underline">CMS</a>. Add your photos there and they'll appear here automatically.</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {Array.from({ length: 12 }).map((_, i) => (
+        <div class="aspect-square rounded-2xl bg-sage-100 border border-sage-200 flex items-center justify-center text-sage-300">
+          <svg class="w-10 h-10 opacity-30" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

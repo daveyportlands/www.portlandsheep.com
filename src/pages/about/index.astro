@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="About Portland Sheep" description="Learn about the Portland sheep — history, characteristics, wool, and why they make an excellent rare breed for smallholders.">
+
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">About</p>
+      <h1 class="font-serif text-5xl mb-6">Portland Sheep</h1>
+      <p class="text-cream-200 text-xl max-w-2xl leading-relaxed">
+        One of Britain's oldest and most distinctive breeds, the Portland has grazed the south of England for over a thousand years.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[
+        ['Overview', '/about/'],
+        ['History', '/about/history/'],
+        ['Wool', '/about/wool/'],
+        ['For the Table', '/about/for-the-table/'],
+      ].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800 prose-a:text-sage-600">
+      <h2>Why Choose Portland Sheep?</h2>
+      <p>
+        The Portland is a small, white-fleeced, tan-faced sheep that originated on the Isle of Portland in Dorset. It is classified as a Vulnerable breed by the Rare Breeds Survival Trust (RBST) and is considered one of the parent breeds of many modern Down breeds.
+      </p>
+      <p>
+        Portland sheep are known for their hardiness, ease of management, and suitability for low-input systems. They thrive on poor land where other breeds would struggle, making them ideal for smallholders, conservation graziers and hobby farmers.
+      </p>
+
+      <h2>Key Characteristics</h2>
+      <ul>
+        <li><strong>Size:</strong> Small to medium — ewes typically 35–50 kg</li>
+        <li><strong>Face & legs:</strong> Tan/orange-buff face and legs at birth, fading with age</li>
+        <li><strong>Fleece:</strong> Fine, dense white wool with a characteristic creamy warmth</li>
+        <li><strong>Horns:</strong> Both sexes are horned; rams carry spiralling horns</li>
+        <li><strong>Lambing:</strong> Single lambs most common; good maternal instinct</li>
+        <li><strong>Longevity:</strong> Hardy constitution, typically 10–12 years productive life</li>
+      </ul>
+
+      <h2>Conservation Status</h2>
+      <p>
+        Listed as <strong>Vulnerable</strong> by the RBST, with a UK breeding population requiring active support. The Portland Sheep Breeders' Group maintains the studbook and works to promote responsible breeding and the preservation of authentic bloodlines.
+      </p>
+    </div>
+
+  </div>
+
+</Layout>

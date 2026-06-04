@@ -1,0 +1,50 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Marketplace">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Buy & Sell</p>
+      <h1 class="font-serif text-5xl mb-6">Marketplace</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Stock for sale, fleece and wool, and Group merchandise.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 py-16">
+
+    <!-- Category tabs -->
+    <div class="flex gap-3 mb-12 flex-wrap">
+      {[
+        ['Stock for Sale', '#stock'],
+        ['Fleece, Wool & Textiles', '#fleece'],
+        ['Merchandise', '#merchandise'],
+      ].map(([label, href]) => (
+        <a href={href} class="px-5 py-2 rounded-full border border-sage-200 text-sm font-medium text-sage-700 hover:bg-sage-50 transition-colors">{label}</a>
+      ))}
+    </div>
+
+    <div id="stock" class="mb-16">
+      <h2 class="font-serif text-2xl text-sage-800 mb-6">Stock for Sale</h2>
+      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
+        <p class="mb-4">No listings at the moment.</p>
+        <p class="text-sm">Members can list stock for free. <a href="/membership/" class="text-sage-600 underline">Join the Group</a> or <a href="/contact/" class="text-sage-600 underline">contact us</a> to add a listing.</p>
+      </div>
+    </div>
+
+    <div id="fleece" class="mb-16">
+      <h2 class="font-serif text-2xl text-sage-800 mb-6">Fleece, Wool &amp; Textiles</h2>
+      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
+        <p class="mb-4">No listings at the moment.</p>
+        <p class="text-sm">Members can list fleece and wool products for free.</p>
+      </div>
+    </div>
+
+    <div id="merchandise" class="mb-16">
+      <h2 class="font-serif text-2xl text-sage-800 mb-6">Merchandise</h2>
+      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
+        <p>Group merchandise details coming soon. <a href="/contact/" class="text-sage-600 underline">Contact us</a> for current availability.</p>
+      </div>
+    </div>
+
+  </div>
+</Layout>

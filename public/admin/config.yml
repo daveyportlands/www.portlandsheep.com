@@ -1,0 +1,103 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/portland-sheep
+  branch: main
+  base_url: https://api.netlify.com   # OAuth proxy — see DEPLOY.md for self-hosted alternative
+
+media_folder: public/images
+public_folder: /images
+
+site_url: https://www.portlandsheep.com
+display_url: https://www.portlandsheep.com
+
+collections:
+
+  - name: pages
+    label: Pages
+    label_singular: Page
+    folder: src/content/pages
+    create: false
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: news
+    label: News & Announcements
+    label_singular: Announcement
+    folder: src/content/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Featured Image, name: image, widget: image, required: false }
+
+  - name: shows
+    label: Show Calendar
+    label_singular: Show
+    folder: src/content/shows
+    create: true
+    slug: "{{year}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Show Name, name: title, widget: string }
+      - { label: Location, name: location, widget: string }
+      - { label: Start Date, name: startDate, widget: datetime }
+      - { label: End Date, name: endDate, widget: datetime }
+      - { label: Judge, name: judge, widget: string, required: false }
+      - { label: Status, name: status, widget: select, options: [upcoming, results_in, cancelled] }
+      - { label: Results / Notes, name: body, widget: markdown, required: false }
+
+  - name: marketplace
+    label: Marketplace
+    label_singular: Listing
+    folder: src/content/marketplace
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Category, name: category, widget: select, options: [stock, fleece_wool_textile, merchandise] }
+      - { label: Date Listed, name: date, widget: datetime }
+      - { label: Contact Name, name: contactName, widget: string }
+      - { label: Contact Email, name: contactEmail, widget: string }
+      - { label: Price, name: price, widget: string, required: false }
+      - { label: Description, name: body, widget: markdown }
+      - { label: Image, name: image, widget: image, required: false }
+
+  - name: newsletters
+    label: Newsletter Archive
+    label_singular: Newsletter
+    folder: src/content/newsletters
+    create: true
+    slug: "{{year}}-{{month}}-newsletter"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Issue Date, name: date, widget: datetime }
+      - { label: PDF File, name: pdf, widget: file, required: false }
+      - { label: Summary, name: summary, widget: text, required: false }
+
+  - name: members_content
+    label: Members Area Content
+    label_singular: Members Document
+    folder: src/content/members
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Category, name: category, widget: select, options: [document, minutes, studbook, announcement] }
+      - { label: Date, name: date, widget: datetime }
+      - { label: File (optional), name: file, widget: file, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }

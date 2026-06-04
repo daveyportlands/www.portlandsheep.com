@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Members Area" description="Exclusive content for Portland Sheep Breeders' Group members.">
+
+  <!-- Password gate overlay -->
+  <div id="password-gate" class="fixed inset-0 z-[100] bg-sage-900/95 backdrop-blur-sm flex items-center justify-center px-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 bg-sage-100 rounded-xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-6 h-6 text-sage-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-serif text-xl text-sage-900">Members Area</h2>
+          <p class="text-xs text-gray-400">Portland Sheep Breeders' Group</p>
+        </div>
+      </div>
+
+      <p class="text-sm text-gray-500 mb-6">
+        This area is for current members only. Enter the members password to continue.
+        If you've forgotten it, <a href="/contact/" class="text-sage-600 underline">contact us</a>.
+      </p>
+
+      <form id="gate-form" class="space-y-4">
+        <div>
+          <label for="gate-password" class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+          <input
+            type="password"
+            id="gate-password"
+            autocomplete="current-password"
+            placeholder="Members password"
+            class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400 focus:border-transparent"
+          />
+        </div>
+
+        <div id="gate-error" class="hidden text-sm text-red-500 flex items-center gap-1.5">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Incorrect password. Please try again.
+        </div>
+
+        <button type="submit" class="w-full bg-sage-700 hover:bg-sage-600 text-white font-semibold py-3 rounded-xl transition-colors">
+          Enter Members Area
+        </button>
+      </form>
+
+      <p class="mt-6 text-center text-xs text-gray-400">
+        Not a member? <a href="/membership/" class="text-sage-600 hover:underline">Join the Group</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Members content (hidden until password is correct) -->
+  <div id="members-content" class="hidden">
+
+    <div class="bg-sage-900 text-white py-20 px-4">
+      <div class="max-w-4xl mx-auto flex items-center gap-4">
+        <div class="w-14 h-14 bg-sage-700 rounded-2xl flex items-center justify-center flex-shrink-0">
+          <svg class="w-7 h-7 text-cream-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-sage-300 text-sm uppercase tracking-widest mb-1">Private</p>
+          <h1 class="font-serif text-4xl">Members Area</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+
+      <div class="bg-sage-50 border border-sage-200 rounded-2xl p-6 mb-12 flex items-start gap-4">
+        <svg class="w-6 h-6 text-sage-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <p class="text-sm text-sage-800">
+          Welcome to the members area. This section is only accessible to current Portland Sheep Breeders' Group members.
+          If you have any issues, please <a href="/contact/" class="underline hover:text-sage-600">contact us</a>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">Newsletter Archive</h3>
+          <p class="text-sm text-gray-500 mb-4">All past issues of the Group newsletter.</p>
+          <a href="/members/newsletters/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            View archive <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">Studbook Records</h3>
+          <p class="text-sm text-gray-500 mb-4">Search studbook entries and download registration forms.</p>
+          <a href="/members/studbook/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            Access studbook <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">Show Results</h3>
+          <p class="text-sm text-gray-500 mb-4">Full results from all Premier shows and fleece competitions.</p>
+          <a href="/members/show-results/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            View results <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">Documents & Forms</h3>
+          <p class="text-sm text-gray-500 mb-4">Membership forms, show entry forms, health protocols.</p>
+          <a href="/members/documents/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            Browse documents <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">Member Directory</h3>
+          <p class="text-sm text-gray-500 mb-4">Find and connect with Portland sheep breeders across the UK.</p>
+          <a href="/members/directory/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            Find members <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+          <div class="w-10 h-10 bg-sage-100 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-serif text-lg text-sage-800 mb-2">AGM & Minutes</h3>
+          <p class="text-sm text-gray-500 mb-4">Annual General Meeting notices, agendas and approved minutes.</p>
+          <a href="/members/agm/" class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+            View minutes <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<script>
+  // ── Password gate ─────────────────────────────────────────────────────────
+  // The password is hashed so it isn't stored in plain text in the source.
+  // To change the password, generate a new SHA-256 hash:
+  //   In browser console: crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-password'))
+  //     .then(b => console.log([...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')))
+  // Default password: members2025
+  const CORRECT_HASH = 'ca48780ada6a97d5b89a1c0e264dcba9c64174f94303f5314d7afa862af499d7';
+
+  const SESSION_KEY = 'psbg_members_auth';
+
+  async function hashPassword(password: string): Promise<string> {
+    const msgBuffer = new TextEncoder().encode(password);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function checkPassword(password: string): Promise<boolean> {
+    const hash = await hashPassword(password);
+    return hash === CORRECT_HASH;
+  }
+
+  function showContent() {
+    document.getElementById('password-gate')!.remove();
+    document.getElementById('members-content')!.classList.remove('hidden');
+  }
+
+  // Check if already authenticated this session
+  if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+    showContent();
+  }
+
+  // Handle form submit
+  document.getElementById('gate-form')!.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const input = document.getElementById('gate-password') as HTMLInputElement;
+    const error = document.getElementById('gate-error')!;
+
+    const correct = await checkPassword(input.value);
+    if (correct) {
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      showContent();
+    } else {
+      error.classList.remove('hidden');
+      input.value = '';
+      input.focus();
+    }
+  });
+</script>

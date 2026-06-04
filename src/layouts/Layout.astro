@@ -191,6 +191,20 @@ const { title, description = 'Portland Sheep Breeders\' Group — the most popul
       menu?.classList.toggle('hidden');
     });
   </script>
+
+  <!-- Netlify Identity — handles password reset / invite token in URL -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
 

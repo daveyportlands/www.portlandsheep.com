@@ -1,10 +1,11 @@
 ---
-title: "Two Portland Ewe Lambs for Sale"
+title: Two Portland Ewe Lambs for Sale
 category: stock
 date: 2025-06-04
-contactName: "Jane Smith"
-contactEmail: "jane@example.com"
-price: "£150 each"
+contactName: Jane Smith
+contactEmail: jane@example.com
+price: £150 each
+image: /images/51ee6d_46b01630cf9241829c995be7521b0a5e.jpg
 ---
 
 Two registered Portland ewe lambs, born March 2025. Both sired by a RBST-approved ram. Dam has excellent milking history and good conformation. Currently running with the flock on upland pasture.

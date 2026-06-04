@@ -1,5 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+const latestNews = allNews
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 ---
 <Layout title="Home">
 
@@ -56,17 +62,21 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- News banner -->
-  <section class="bg-bark-500 text-white py-4 px-4">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-3">
-      <span class="bg-white/20 rounded-full px-3 py-0.5 text-xs font-semibold uppercase tracking-wider">Latest News</span>
-      <p class="text-sm">
-        <strong>Carole Muddiman</strong> judging the 2025 Premier Shows &mdash;
-        Midland Premier Champion: Hannah Stott &mdash;
-        Northern Premier at Royal Lancashire Show, July 18–20 &mdash;
-        Southern Premier at New Forest Show, July 29–31
-      </p>
-    </div>
-  </section>
+  {latestNews.length > 0 && (
+    <section class="bg-bark-500 text-white py-4 px-4">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center gap-3">
+        <span class="bg-white/20 rounded-full px-3 py-0.5 text-xs font-semibold uppercase tracking-wider flex-shrink-0">Latest News</span>
+        <p class="text-sm">
+          {latestNews.map((item, i) => (
+            <>
+              {i > 0 && <span class="mx-2 opacity-40">&mdash;</span>}
+              <span>{item.data.summary}</span>
+            </>
+          ))}
+        </p>
+      </div>
+    </section>
+  )}
 
   <!-- Why Portland Sheep — 3 columns -->
   <section class="py-24 px-4">

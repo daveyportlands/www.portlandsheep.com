@@ -1,5 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allListings = await getCollection('marketplace');
+const sorted = allListings.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const stock = sorted.filter(l => l.data.category === 'stock');
+const fleece = sorted.filter(l => l.data.category === 'fleece_wool_textile');
+const merch  = sorted.filter(l => l.data.category === 'merchandise');
 ---
 <Layout title="Marketplace">
   <div class="bg-sage-800 text-white py-20 px-4">
@@ -12,39 +20,51 @@ import Layout from '../../layouts/Layout.astro';
 
   <div class="max-w-7xl mx-auto px-4 py-16">
 
-    <!-- Category tabs -->
     <div class="flex gap-3 mb-12 flex-wrap">
-      {[
-        ['Stock for Sale', '#stock'],
-        ['Fleece, Wool & Textiles', '#fleece'],
-        ['Merchandise', '#merchandise'],
-      ].map(([label, href]) => (
-        <a href={href} class="px-5 py-2 rounded-full border border-sage-200 text-sm font-medium text-sage-700 hover:bg-sage-50 transition-colors">{label}</a>
-      ))}
+      <a href="#stock"       class="px-5 py-2 rounded-full border border-sage-200 text-sm font-medium text-sage-700 hover:bg-sage-50 transition-colors">Stock for Sale ({stock.length})</a>
+      <a href="#fleece"      class="px-5 py-2 rounded-full border border-sage-200 text-sm font-medium text-sage-700 hover:bg-sage-50 transition-colors">Fleece, Wool & Textiles ({fleece.length})</a>
+      <a href="#merchandise" class="px-5 py-2 rounded-full border border-sage-200 text-sm font-medium text-sage-700 hover:bg-sage-50 transition-colors">Merchandise ({merch.length})</a>
     </div>
 
-    <div id="stock" class="mb-16">
-      <h2 class="font-serif text-2xl text-sage-800 mb-6">Stock for Sale</h2>
-      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
-        <p class="mb-4">No listings at the moment.</p>
-        <p class="text-sm">Members can list stock for free. <a href="/membership/" class="text-sage-600 underline">Join the Group</a> or <a href="/contact/" class="text-sage-600 underline">contact us</a> to add a listing.</p>
-      </div>
-    </div>
+    {[
+      { id: 'stock',       label: 'Stock for Sale',          listings: stock },
+      { id: 'fleece',      label: 'Fleece, Wool & Textiles', listings: fleece },
+      { id: 'merchandise', label: 'Merchandise',             listings: merch  },
+    ].map(section => (
+      <div id={section.id} class="mb-16">
+        <h2 class="font-serif text-2xl text-sage-800 mb-6">{section.label}</h2>
 
-    <div id="fleece" class="mb-16">
-      <h2 class="font-serif text-2xl text-sage-800 mb-6">Fleece, Wool &amp; Textiles</h2>
-      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
-        <p class="mb-4">No listings at the moment.</p>
-        <p class="text-sm">Members can list fleece and wool products for free.</p>
+        {section.listings.length === 0 ? (
+          <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
+            <p class="mb-2">No listings at the moment.</p>
+            <p class="text-sm">Members can list for free. <a href="/membership/" class="text-sage-600 underline">Join the Group</a> or <a href="/contact/" class="text-sage-600 underline">contact us</a>.</p>
+          </div>
+        ) : (
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {section.listings.map(listing => (
+              <div class="bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow">
+                {listing.data.image && (
+                  <img src={listing.data.image} alt={listing.data.title} class="w-full h-48 object-cover rounded-xl mb-4" />
+                )}
+                <div class="flex items-start justify-between gap-2 mb-2">
+                  <h3 class="font-serif text-lg text-sage-800 leading-snug">{listing.data.title}</h3>
+                  {listing.data.price && (
+                    <span class="text-sm font-semibold text-bark-500 whitespace-nowrap">{listing.data.price}</span>
+                  )}
+                </div>
+                <p class="text-xs text-gray-400 mb-3">
+                  Listed {listing.data.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                </p>
+                <a href={`/marketplace/${listing.slug}/`} class="text-sm font-medium text-sage-600 hover:text-sage-800 transition-colors flex items-center gap-1">
+                  View listing
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
-    </div>
-
-    <div id="merchandise" class="mb-16">
-      <h2 class="font-serif text-2xl text-sage-800 mb-6">Merchandise</h2>
-      <div class="bg-cream-100 rounded-2xl border border-cream-200 p-8 text-center text-gray-500">
-        <p>Group merchandise details coming soon. <a href="/contact/" class="text-sage-600 underline">Contact us</a> for current availability.</p>
-      </div>
-    </div>
+    ))}
 
   </div>
 </Layout>

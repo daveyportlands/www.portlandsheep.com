@@ -1,14 +1,10 @@
 backend:
-  name: github
-  repo: YOUR_GITHUB_USERNAME/portland-sheep
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com   # OAuth proxy — see DEPLOY.md for self-hosted alternative
 
 media_folder: public/images
 public_folder: /images
 
-site_url: https://www.portlandsheep.com
-display_url: https://www.portlandsheep.com
 
 collections:
 

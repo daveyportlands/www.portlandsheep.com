@@ -1,5 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const images = [
+  '51ee6d_0107ee46ac9c4606aaa9248d6e431dfd.jpg',
+  '51ee6d_04638d4f32a2472b9941596bb2ebf35a.jpg',
+  '51ee6d_0cc383e8742f42dfa9e4127db7e64f67.jpg',
+  '51ee6d_2abef5b2e41846dba6b2beb45b1f7488.jpg',
+  '51ee6d_46b01630cf9241829c995be7521b0a5e.jpg',
+  '51ee6d_7d77c494cfac4b178809ad7b9b4e682b.jpg',
+  '51ee6d_9be5ebb07dd54e0b9561709e5753f778.jpg',
+  '51ee6d_ca2237a3a5aa4ce0b9ec3ed23dcf14f3.jpg',
+  '51ee6d_e31b12f0f7bb410da7854a8b49b29eb7.jpg',
+  '51ee6d_ee2fa396baf141edb027b03fb9874db8.jpg',
+  '51ee6d_fe0c439b58344f9cabba7b96b62d2fd0.jpg',
+];
 ---
 <Layout title="Gallery">
   <div class="bg-sage-800 text-white py-20 px-4">
@@ -11,13 +25,20 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 
   <div class="max-w-7xl mx-auto px-4 py-16">
-    <p class="text-gray-500 mb-8 text-sm">Images are managed via the <a href="/admin/" class="text-sage-600 underline">CMS</a>. Add your photos there and they'll appear here automatically.</p>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {Array.from({ length: 12 }).map((_, i) => (
-        <div class="aspect-square rounded-2xl bg-sage-100 border border-sage-200 flex items-center justify-center text-sage-300">
-          <svg class="w-10 h-10 opacity-30" fill="currentColor" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-        </div>
+      {images.map((filename) => (
+        <a href={`/images/${filename}`} target="_blank" rel="noopener"
+           class="group aspect-square rounded-2xl overflow-hidden border border-sage-200 bg-sage-100 block">
+          <img
+            src={`/images/${filename}`}
+            alt="Portland sheep"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </a>
       ))}
     </div>
+    <p class="text-center text-sm text-gray-400 mt-10">
+      To add photos, upload images via the <a href="/admin/" class="text-sage-600 underline hover:text-sage-800">CMS media library</a> and they'll appear here automatically.
+    </p>
   </div>
 </Layout>

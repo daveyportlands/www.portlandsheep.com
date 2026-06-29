@@ -1,0 +1,43 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Portland Sheep Wool">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">About</p>
+      <h1 class="font-serif text-5xl mb-6">Wool</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Fine, creamy and highly prized by hand-spinners and textile artists.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[['Overview', '/about/'], ['History', '/about/history/'], ['Wool', '/about/wool/'], ['For the Table', '/about/for-the-table/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+      <h2>Fleece Characteristics</h2>
+      <p>Portland wool is one of the finest produced by any British primitive breed. The fleece has a characteristic warm creamy-white colour with a soft, dense texture and a moderate staple length of around 5–8 cm. The fibre diameter typically ranges from 27–33 microns — finer than many Down breeds and comparable to some Merino crosses.</p>
+      <p>The natural crimp gives the spun yarn excellent elasticity and bounce. Portland wool takes dye beautifully, producing rich, even colours that make it popular with natural dyers working with plant-based dyes.</p>
+
+      <h2>Fleece Weight</h2>
+      <p>Average fleece weight is modest — typically 1–2 kg per ewe — reflecting the breed's small size and efficient conversion. What the Portland lacks in bulk it more than makes up for in quality.</p>
+
+      <h2>Uses</h2>
+      <ul>
+        <li><strong>Hand-spinning:</strong> The staple length and crimp make it ideal for hand-spinning, either from raw fleece or as prepared roving. It spins to a smooth, well-defined yarn.</li>
+        <li><strong>Knitting and weaving:</strong> Portland yarn produces garments with excellent drape and warmth-to-weight ratio.</li>
+        <li><strong>Natural dyeing:</strong> The creamy white base takes plant dyes exceptionally well.</li>
+        <li><strong>Felt-making:</strong> The fine crimp allows good felting for both wet and needle felt work.</li>
+      </ul>
+
+      <h2>Shearing</h2>
+      <p>Portland sheep are typically shorn once a year in late spring or early summer. The fleece should be skirted promptly after shearing to remove heavily soiled edges, then stored in a cool, dry, well-ventilated space.</p>
+      <p>Members of the Portland Sheep Breeders' Group frequently offer raw fleeces for sale via the <a href="/marketplace/">Marketplace</a>. Fleece classes are also offered at the Group's Premier Shows.</p>
+
+      <h2>Showing Fleece</h2>
+      <p>Portland fleeces are judged on fineness, staple length, colour, cleanliness and overall presentation. See our <a href="/showing/">Showing</a> pages for full guidance on preparing and presenting a fleece for competition.</p>
+    </div>
+  </div>
+</Layout>

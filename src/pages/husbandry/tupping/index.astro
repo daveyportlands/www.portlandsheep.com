@@ -1,0 +1,59 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Tupping — Portland Sheep">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Husbandry</p>
+      <h1 class="font-serif text-5xl mb-6">Tupping</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Ram selection, condition scoring, flushing and introduction.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[["Shepherd's Year", '/husbandry/'], ['Lambing', '/husbandry/lambing/'], ['Health Tasks', '/husbandry/health/'], ['Tupping', '/husbandry/tupping/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+
+      <h2>Timing</h2>
+      <p>Portland ewes are seasonally polyoestrous, coming into season as day length shortens from late summer. The natural tupping season runs from October to December, with most ewes cycling reliably from mid-October. For March lambing, introduce rams in late October. For April lambing, early November.</p>
+      <p>Ewe lambs (gimmers) can be tupped in their first year if well-grown — aim for at least 60% of mature bodyweight at tupping.</p>
+
+      <h2>Ram Selection</h2>
+      <p>For studbook-registered stock, rams must be registered with the Portland Sheep Breeders' Group. When selecting a ram consider:</p>
+      <ul>
+        <li><strong>Conformation:</strong> Correct breed type — tan face, well-set spiralling horns, compact muscular body</li>
+        <li><strong>Feet and legs:</strong> Sound movement, no signs of chronic lameness</li>
+        <li><strong>Testicles:</strong> Both present, firm, even in size, no lumps or asymmetry</li>
+        <li><strong>Body condition:</strong> Aim for BCS 3.5–4 at tupping — neither too thin nor too fat</li>
+        <li><strong>Bloodlines:</strong> Check studbook for inbreeding — avoid close relatives where possible</li>
+      </ul>
+      <p>Rams available for sale or loan are often listed on the Group <a href="/marketplace/">Marketplace</a>.</p>
+
+      <h2>Pre-Tupping Preparation</h2>
+      <ul>
+        <li>Body condition score ewes 6–8 weeks before tupping — aim for BCS 2.5–3.5</li>
+        <li><strong>Flush</strong> thin ewes (BCS below 2.5): move to better pasture or supplement with concentrates 2–3 weeks before introduction. Flushing increases ovulation rate and twinning.</li>
+        <li>Vaccinate ewes (Heptavac-P booster) 4–6 weeks before tupping if your schedule allows</li>
+        <li>Check and trim feet on both ewes and rams</li>
+        <li>Fit the ram with a raddle (marking harness) to identify which ewes have been served — change colour every 17 days to track repeat matings</li>
+      </ul>
+
+      <h2>Ram-to-Ewe Ratio</h2>
+      <p>A fit, experienced Portland ram can manage 40–50 ewes in a single tupping season. Young shearling rams should be limited to 20–25 ewes. Where possible, run two rams together to encourage competition and ensure all ewes are covered.</p>
+
+      <h2>During Tupping</h2>
+      <ul>
+        <li>Check the ram daily — a lame or ill ram will miss ewes</li>
+        <li>Record raddle marks: ewes returning to the ram after 17 days may indicate the ram is infertile or a ewe has a problem</li>
+        <li>Leave the ram in for at least two full cycles (34 days) to catch any ewes that missed on the first cycle</li>
+      </ul>
+
+      <h2>After Tupping</h2>
+      <p>Remove the ram once tupping is complete. Maintain ewes on a steady plane of nutrition — avoid both underfeeding and overfeeding in early pregnancy. Pregnancy scanning at 70–90 days gestation is recommended to identify singles, twins and empty ewes for separate management.</p>
+    </div>
+  </div>
+</Layout>

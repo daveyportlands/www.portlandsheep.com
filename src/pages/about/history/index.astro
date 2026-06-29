@@ -1,0 +1,36 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="History of Portland Sheep">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">About</p>
+      <h1 class="font-serif text-5xl mb-6">History</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Over a thousand years of history on the Isle of Portland.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[['Overview', '/about/'], ['History', '/about/history/'], ['Wool', '/about/wool/'], ['For the Table', '/about/for-the-table/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+      <h2>Ancient Origins</h2>
+      <p>The Portland is one of the oldest breeds of sheep in Britain. It takes its name from the Isle of Portland, a limestone peninsula on the Dorset coast, where it has been kept for at least a thousand years. Some historians believe the breed may have been introduced by the Romans or even earlier settlers.</p>
+      <p>Medieval records refer to sheep on Portland that were jealously protected by the local inhabitants, who considered them common property and resisted any attempts to remove them from the island. The breed became so associated with the place that any sheep taken off the island was said to have "left Portland" — a phrase that persisted into the 19th century.</p>
+
+      <h2>The Portland as a Foundation Breed</h2>
+      <p>The Portland is widely regarded as one of the parent breeds of the Dorset Horn, and through it, many of the modern Down breeds. Its characteristic early-maturing, fine-woolled, prolific nature was highly valued by 18th and 19th century improvers who crossed it with other breeds to develop new strains suited to lowland farming.</p>
+      <p>George III kept a flock at Windsor and the breed was fashionable among aristocratic landowners in the late 18th century. Despite this early popularity, the breed declined dramatically during the 20th century as farming intensified and commercial breeds took over.</p>
+
+      <h2>Near Extinction and Recovery</h2>
+      <p>By the 1970s the Portland was on the verge of extinction, with only a handful of flocks surviving. The formation of the Rare Breeds Survival Trust (RBST) in 1973 brought renewed attention to the breed's plight. The Portland Sheep Breeders' Group was established to coordinate conservation efforts, maintain a studbook, and promote the breed to new keepers.</p>
+      <p>Today the Portland remains classified as <strong>Vulnerable</strong> by the RBST, but numbers have recovered significantly. There are now flocks across England and Wales, and the breed is increasingly popular with smallholders, conservation graziers, and rare breed enthusiasts.</p>
+
+      <h2>The Portland Today</h2>
+      <p>The breed retains all its ancient characteristics — the distinctive tan face and legs at birth (fading to white with age), the spiralling horns of both sexes, the fine dense fleece, and the hardy, undemanding temperament. It remains a living link to Britain's agricultural past and an important genetic resource for the future.</p>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Showing Fleece — Portland Sheep">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Showing</p>
+      <h1 class="font-serif text-5xl mb-6">Showing Fleece</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">How to prepare and present a Portland fleece for competition.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[['Showing Sheep', '/showing/'], ['Showing Fleece', '/showing/fleece/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+
+      <h2>Fleece Classes</h2>
+      <p>Fleece classes are offered at all Portland Sheep Breeders' Group Premier Shows. Classes are typically:</p>
+      <ul>
+        <li>Ewe fleece</li>
+        <li>Ram fleece</li>
+        <li>Young stock fleece (shearling and under)</li>
+      </ul>
+
+      <h2>What Judges Look For</h2>
+      <p>Portland fleeces are judged on the following criteria:</p>
+      <ul>
+        <li><strong>Fineness:</strong> Fine, dense fibre typical of the breed</li>
+        <li><strong>Staple length:</strong> Appropriate length for age — typically 5–8 cm</li>
+        <li><strong>Colour:</strong> Clean creamy white; freedom from dark fibres or discolouration</li>
+        <li><strong>Handle:</strong> Soft, dense texture with good crimp</li>
+        <li><strong>Cleanliness:</strong> Free from vegetable matter, dung tags and excessive lanolin</li>
+        <li><strong>Presentation:</strong> Correctly rolled and neatly presented</li>
+      </ul>
+
+      <h2>Preparing the Fleece</h2>
+      <ol>
+        <li><strong>Skirt promptly after shearing</strong> — remove heavily soiled edges, legs and belly wool</li>
+        <li><strong>Pick out vegetable matter</strong> by hand — seeds, hay and grass are very difficult to remove from fine wool and will lose you marks</li>
+        <li><strong>Do not wash the fleece</strong> — judges expect to see the natural lanolin content</li>
+        <li><strong>Store correctly</strong> — roll the fleece flesh-side out, wrap loosely in paper (not plastic) and store in a cool dry place</li>
+      </ol>
+
+      <h2>Rolling the Fleece</h2>
+      <ol>
+        <li>Lay the fleece cut-side up on a clean surface</li>
+        <li>Fold in the sides to form a neat rectangle</li>
+        <li>Roll firmly from the neck end towards the tail</li>
+        <li>Tuck the neck wool around the outside of the roll to secure — do not use string or rubber bands</li>
+      </ol>
+
+      <h2>On the Day</h2>
+      <p>Present your fleece on the board provided with the roll facing upward. The judge will open the fleece to inspect staple length, crimp and handle. Ensure your fleece is clearly labelled with your entry number.</p>
+      <p>Contact us via the <a href="/contact/">Contact page</a> for the current show schedule and entry forms.</p>
+    </div>
+  </div>
+</Layout>

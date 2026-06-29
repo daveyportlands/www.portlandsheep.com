@@ -1,0 +1,36 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Portland Sheep — For the Table">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">About</p>
+      <h1 class="font-serif text-5xl mb-6">For the Table</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Portland lamb and mutton — outstanding flavour from a genuine heritage breed.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[['Overview', '/about/'], ['History', '/about/history/'], ['Wool', '/about/wool/'], ['For the Table', '/about/for-the-table/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+      <h2>Flavour and Quality</h2>
+      <p>Portland lamb and mutton are prized for their exceptional flavour — rich, complex and distinctly different from commercial breeds. The meat is finely textured with good marbling, a direct result of the breed's slow growth rate and outdoor, low-input management. Animals raised on herb-rich downland pastures develop an aromatic quality that is immediately apparent on the plate.</p>
+      <p>Portland mutton (from older animals) is particularly highly regarded. As slow-growing animals with a long productive life, Portland sheep produce mutton of outstanding depth of flavour — a world away from the mutton of intensively reared breeds.</p>
+
+      <h2>Carcass Characteristics</h2>
+      <p>The Portland is a small-framed breed and carcasses are correspondingly modest in size — typically 12–18 kg dressed weight for a lamb. This suits smaller households and direct-to-consumer sales well. The lean-to-fat ratio is good and the fat cover tends to be even and well-distributed.</p>
+
+      <h2>Selling Meat</h2>
+      <p>Many Portland breeders sell direct to the public, either as whole, half or quarter carcasses, or as individual cuts. Members can advertise meat sales free of charge via the Group's <a href="/marketplace/">Marketplace</a>.</p>
+      <p>All meat sales must comply with relevant UK food hygiene and labelling regulations. Animals must be slaughtered at an approved abattoir. Contact us if you need guidance on the regulatory requirements for direct meat sales.</p>
+
+      <h2>Cooking</h2>
+      <p>Portland lamb benefits from simple cooking that allows the flavour to speak for itself — roasting on the bone, slow-braising shanks, or grilling chops over charcoal. The stronger flavour of mutton suits long, slow cooking: slow-roasted shoulder, Lancashire hotpot, or braised neck fillets.</p>
+      <p>The small carcass size means portions tend to be generous relative to the joint size — a leg from a Portland lamb is an ideal size for 2–3 people.</p>
+    </div>
+  </div>
+</Layout>

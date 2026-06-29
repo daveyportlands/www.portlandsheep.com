@@ -1,0 +1,59 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Lambing Portland Sheep">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Husbandry</p>
+      <h1 class="font-serif text-5xl mb-6">Lambing</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Preparation, signs of labour, assistance and lamb care.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[["Shepherd's Year", '/husbandry/'], ['Lambing', '/husbandry/lambing/'], ['Health Tasks', '/husbandry/health/'], ['Tupping', '/husbandry/tupping/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+      <h2>When Do Portland Ewes Lamb?</h2>
+      <p>Portland sheep are seasonal breeders. Tupping typically takes place in October–November, producing lambs in March–April. The gestation period is approximately 147 days (21 weeks). Portlands are not noted for out-of-season breeding, though early lambing (February) is possible with careful management.</p>
+      <p>Singles are most common, though twins occur regularly in well-conditioned ewes. Triplets are rare.</p>
+
+      <h2>Preparation</h2>
+      <ul>
+        <li>Body condition score ewes 6–8 weeks before lambing — aim for BCS 3–3.5</li>
+        <li>Flush thin ewes with supplementary feed if needed</li>
+        <li>Vaccinate ewes against clostridial diseases 4–6 weeks before lambing (e.g. Heptavac-P)</li>
+        <li>Trim hooves if needed — avoid handling ewes in late pregnancy if possible</li>
+        <li>Prepare lambing pens with clean, deep bedding</li>
+        <li>Assemble your lambing kit: iodine, colostrum, stomach tube, lubricant, gloves, ear tags</li>
+      </ul>
+
+      <h2>Signs of Imminent Labour</h2>
+      <ul>
+        <li>Udder becomes full and tight (bagging up) — 24–48 hours before</li>
+        <li>Ewe becomes restless, separates from the flock</li>
+        <li>Hollow either side of tailhead</li>
+        <li>Vulva relaxes and may show discharge</li>
+        <li>Ewe begins pawing the ground and looking at her flanks</li>
+      </ul>
+
+      <h2>Normal Lambing</h2>
+      <p>Portlands generally lamb easily and without assistance. The normal presentation is two front feet followed by the nose. First-stage labour (cervical dilation) may last several hours; second-stage (active straining) should not exceed 45–60 minutes. If a ewe has been actively straining for more than an hour without progress, investigate.</p>
+
+      <h2>Lamb Care</h2>
+      <ul>
+        <li>Clear mucus from mouth and nostrils immediately</li>
+        <li>Dip the navel in strong iodine solution within the first hour</li>
+        <li>Ensure the lamb suckles within 2 hours — colostrum is critical in the first 6 hours</li>
+        <li>Weigh and tag lambs within 24 hours for studbook records</li>
+        <li>Keep ewe and lamb in a small pen for 24–48 hours to bond</li>
+      </ul>
+
+      <h2>Record Keeping</h2>
+      <p>Accurate lambing records are essential for studbook registration. Record: dam tag number, sire tag number, date of birth, sex, birth weight, tag number allocated. These details are required when registering lambs with the Group.</p>
+    </div>
+  </div>
+</Layout>

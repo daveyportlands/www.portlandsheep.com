@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Committee & Officers">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Organisation</p>
+      <h1 class="font-serif text-5xl mb-6">Committee &amp; Officers</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">The volunteers who run the Portland Sheep Breeders' Group.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <div class="bg-cream-100 border border-cream-200 rounded-2xl p-6 mb-10 text-sm text-gray-600">
+      The Group is run entirely by volunteers who are themselves Portland sheep breeders. Committee members are elected at the Annual General Meeting. If you are interested in getting involved, please <a href="/contact/" class="text-sage-600 underline">contact us</a>.
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-16">
+      {[
+        { role: 'Chair', name: 'To be confirmed', note: '' },
+        { role: 'Secretary', name: 'To be confirmed', note: '' },
+        { role: 'Treasurer', name: 'To be confirmed', note: '' },
+        { role: 'Membership Secretary', name: 'To be confirmed', note: '' },
+        { role: 'Studbook Secretary', name: 'To be confirmed', note: '' },
+        { role: 'Newsletter Editor', name: 'To be confirmed', note: '' },
+        { role: 'Show Secretary', name: 'To be confirmed', note: '' },
+        { role: 'Webmaster', name: 'To be confirmed', note: '' },
+      ].map(officer => (
+        <div class="bg-white rounded-2xl border border-cream-200 p-5 flex items-center gap-4">
+          <div class="w-10 h-10 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-sage-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-sage-500 mb-0.5">{officer.role}</p>
+            <p class="font-medium text-gray-700">{officer.name}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="prose prose-slate prose-headings:font-serif prose-headings:text-sage-800 max-w-none">
+      <h2>General Committee</h2>
+      <p>In addition to the officers above, the Group has a number of general committee members elected from the membership. The full committee list will be updated following the next AGM.</p>
+      <h2>Contact the Committee</h2>
+      <p>All general enquiries should be directed to <a href="mailto:portland.sheep.enquiries@gmail.com">portland.sheep.enquiries@gmail.com</a>. The secretary will direct your message to the appropriate officer.</p>
+    </div>
+  </div>
+</Layout>

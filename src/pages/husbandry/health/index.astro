@@ -1,0 +1,70 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="Health Tasks — Portland Sheep">
+  <div class="bg-sage-800 text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-sage-300 text-sm uppercase tracking-widest mb-3">Husbandry</p>
+      <h1 class="font-serif text-5xl mb-6">Health Tasks</h1>
+      <p class="text-cream-200 text-xl max-w-2xl">Vaccinations, worming, foot care and common health issues.</p>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16">
+    <nav class="flex gap-4 mb-12 border-b border-cream-200 pb-4 overflow-x-auto">
+      {[["Shepherd's Year", '/husbandry/'], ['Lambing', '/husbandry/lambing/'], ['Health Tasks', '/husbandry/health/'], ['Tupping', '/husbandry/tupping/']].map(([label, href]) => (
+        <a href={href} class="text-sm font-medium text-gray-500 hover:text-sage-700 pb-4 -mb-4 border-b-2 border-transparent hover:border-sage-500 transition-colors whitespace-nowrap px-1">{label}</a>
+      ))}
+    </nav>
+    <div class="prose prose-slate max-w-none prose-headings:font-serif prose-headings:text-sage-800">
+
+      <h2>Vaccinations</h2>
+      <p>The most important routine vaccination for Portland sheep is against <strong>clostridial diseases</strong>. A combined vaccine such as Heptavac-P Plus also covers pasteurellosis.</p>
+      <ul>
+        <li><strong>Ewes:</strong> Vaccinate 4–6 weeks before lambing. If ewes have not been vaccinated before, give a primary course of two injections 4–6 weeks apart.</li>
+        <li><strong>Lambs:</strong> Lambs from vaccinated ewes receive passive immunity via colostrum. Primary vaccination at 8–10 weeks; booster 4–6 weeks later; annual boosters thereafter.</li>
+      </ul>
+
+      <h2>Worm Control (SCOPS principles)</h2>
+      <p>Portland sheep are no more or less susceptible to internal parasites than other breeds, but as a conservation breed it is important to use anthelmintics responsibly to minimise resistance.</p>
+      <ul>
+        <li>Use Faecal Egg Counts (FECs) to target treatment rather than blanket dosing</li>
+        <li>Avoid treating animals unnecessarily — young lambs on pasture in summer are most at risk</li>
+        <li>Use different anthelmintic groups in rotation and always treat to the correct weight</li>
+        <li>Quarantine and treat any incoming animals before mixing with the flock</li>
+      </ul>
+      <p>Follow the <a href="https://www.scops.org.uk" target="_blank" rel="noopener">SCOPS guidelines</a> for sustainable worm control.</p>
+
+      <h2>Foot Care</h2>
+      <p>Portland sheep kept on well-drained upland or chalk pastures often require minimal foot trimming. Those on wetter lowland ground may need more regular attention.</p>
+      <ul>
+        <li>Check feet at least twice yearly — at housing/pregnancy scanning and at tupping</li>
+        <li>Treat footrot promptly: pare affected tissue, treat with antibiotic spray, isolate affected animals</li>
+        <li>Vaccination against footrot (Footvax) is recommended in flocks with persistent problems</li>
+        <li>Avoid over-trimming — leave the white line intact</li>
+      </ul>
+
+      <h2>Flystrike</h2>
+      <p>Blowfly strike is a serious welfare concern, particularly in warm wet weather (May–September). Portland sheep's dense fleece can harbour the conditions flystrike needs.</p>
+      <ul>
+        <li>Check sheep daily in the risk season — watch for wool pulling, stamping or dark damp patches</li>
+        <li>Use preventive products (e.g. Crovect, CLiK) in high-risk periods</li>
+        <li>Dagg (crutch) ewes before the risk season to remove soiled wool around the back end</li>
+        <li>Treat affected sheep immediately — remove maggots, clean the wound, apply wound dressing</li>
+      </ul>
+
+      <h2>Common Health Issues</h2>
+      <table>
+        <thead><tr><th>Condition</th><th>Signs</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Hypocalcaemia (milk fever)</td><td>Staggers, collapse in late pregnancy/early lactation</td><td>IV/SC calcium borogluconate urgently</td></tr>
+          <tr><td>Pregnancy toxaemia (twin lamb disease)</td><td>Dull, off food, wobbly gait in late pregnancy</td><td>Propylene glycol, vet attention</td></tr>
+          <tr><td>Orf</td><td>Crusty lesions around mouth/nose — also infects humans</td><td>Isolate; vaccine available; wear gloves</td></tr>
+          <tr><td>Pneumonia</td><td>Cough, nasal discharge, rapid breathing</td><td>Vet — antibiotics required</td></tr>
+        </tbody>
+      </table>
+
+      <p class="mt-6">Always consult your vet for diagnosis and treatment of sick animals. This guidance is general only and does not replace professional veterinary advice.</p>
+    </div>
+  </div>
+</Layout>

@@ -140,19 +140,63 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		
-	};
-
-	type DataEntryMap = {
-		"pages": Record<string, {
+		"marketplace": {
+"2025-06-04-sample-listing.md": {
+	id: "2025-06-04-sample-listing.md";
+  slug: "2025-06-04-sample-listing";
+  body: string;
+  collection: "marketplace";
+  data: InferEntrySchema<"marketplace">
+} & { render(): Render[".md"] };
+"2026-06-04-lambs-for-sale.md": {
+	id: "2026-06-04-lambs-for-sale.md";
+  slug: "2026-06-04-lambs-for-sale";
+  body: string;
+  collection: "marketplace";
+  data: InferEntrySchema<"marketplace">
+} & { render(): Render[".md"] };
+};
+"news": {
+"2025-06-04-premier-shows-2025.md": {
+	id: "2025-06-04-premier-shows-2025.md";
+  slug: "2025-06-04-premier-shows-2025";
+  body: string;
+  collection: "news";
+  data: InferEntrySchema<"news">
+} & { render(): Render[".md"] };
+};
+"newsletters": Record<string, {
   id: string;
+  slug: string;
+  body: string;
+  collection: "newsletters";
+  data: InferEntrySchema<"newsletters">;
+  render(): Render[".md"];
+}>;
+"pages": Record<string, {
+  id: string;
+  slug: string;
+  body: string;
   collection: "pages";
-  data: any;
+  data: InferEntrySchema<"pages">;
+  render(): Render[".md"];
+}>;
+"shows": Record<string, {
+  id: string;
+  slug: string;
+  body: string;
+  collection: "shows";
+  data: InferEntrySchema<"shows">;
+  render(): Render[".md"];
 }>;
 
 	};
 
+	type DataEntryMap = {
+		
+	};
+
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }

@@ -14,12 +14,12 @@ import Layout from '../../layouts/Layout.astro';
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[
-        { title: "Shepherd's Year", href: '/husbandry/', desc: 'A month-by-month guide to the key tasks and events in the Portland shepherd\'s calendar.' },
+        { title: "Shepherd's Year", href: '/husbandry/shepherds-year/', desc: 'A seasonal guide to the key tasks and events in the Portland shepherd\'s calendar.' },
         { title: 'Lambing', href: '/husbandry/lambing/', desc: 'Preparation, signs of labour, assistance, lamb care and record-keeping.' },
         { title: 'Health Tasks', href: '/husbandry/health/', desc: 'Vaccinations, worming, foot care and common health issues in Portland sheep.' },
         { title: 'Tupping', href: '/husbandry/tupping/', desc: 'Ram selection, condition scoring, introduction and flushing guidance.' },
-        { title: 'Feeding & Nutrition', href: '/husbandry/', desc: 'Grazing management, supplementary feeding, minerals and body condition scoring.' },
-        { title: 'Fleece & Shearing', href: '/husbandry/', desc: 'Shearing timing, preparation, and storing Portland fleeces correctly.' },
+        { title: 'Rules & Regulations', href: '/husbandry/rules-and-regulations/', desc: 'A starting point for identification, movement, welfare and record-keeping requirements.' },
+        { title: 'Fleece & Shearing', href: '/about/wool/', desc: 'Shearing timing, fleece preparation and the qualities of Portland wool.' },
       ].map(card => (
         <a href={card.href} class="group bg-white rounded-2xl border border-cream-200 p-6 hover:shadow-md transition-shadow block">
           <h3 class="font-serif text-lg text-sage-800 mb-2 group-hover:text-sage-600 transition-colors">{card.title}</h3>

@@ -1,1 +1,16 @@
 /admin    /admin/index.html    200
+/description                    /about/                              301
+/why-portland-sheep             /about/why-portland-sheep/           301
+/history                        /about/history/                      301
+/wool                           /about/wool/                         301
+/for-the-table                  /about/for-the-table/                301
+/guidelines-for-showing         /showing/                            301
+/guidelines-for-showing-fleece  /showing/fleece/                     301
+/a-shepards-year                /husbandry/shepherds-year/           301
+/lambing                        /husbandry/lambing/                  301
+/regular-health-tasks           /husbandry/health/                   301
+/rules-and-regulations          /husbandry/rules-and-regulations/   301
+/new-beffore                    /husbandry/tupping/                  301
+/contacts                       /contact/                            301
+/copy-of-about-us               /constitution/                      301
+/newletter-2018                 /newsletters/                        301

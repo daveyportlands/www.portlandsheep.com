@@ -279,4 +279,36 @@ const { title, description = 'Portland Sheep Breeders\' Group — the most popul
   .prose tbody tr:nth-child(even) {
     @apply bg-cream-100;
   }
+  .editorial-image {
+    float: right;
+    width: min(42%, 22rem);
+    margin: 0.4rem 0 1.5rem 2rem;
+  }
+  .editorial-image--left {
+    float: left;
+    margin: 0.4rem 2rem 1.5rem 0;
+  }
+  .editorial-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+  }
+  .editorial-image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #6b7280;
+  }
+  .editorial-clear {
+    clear: both;
+  }
+  @media (max-width: 640px) {
+    .editorial-image,
+    .editorial-image--left {
+      float: none;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+  }
 </style>

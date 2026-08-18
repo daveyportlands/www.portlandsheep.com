@@ -64,7 +64,10 @@ collections:
       - { label: Category, name: category, widget: select, options: [stock, fleece_wool_textile, merchandise] }
       - { label: Date Listed, name: date, widget: datetime }
       - { label: Contact Name, name: contactName, widget: string }
-      - { label: Contact Email, name: contactEmail, widget: string }
+      - { label: Contact Email, name: contactEmail, widget: string, required: false }
+      - { label: Contact Phone, name: contactPhone, widget: string, required: false }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Website, name: website, widget: string, required: false }
       - { label: Price, name: price, widget: string, required: false }
       - { label: Description, name: body, widget: markdown }
       - { label: Image, name: image, widget: image, required: false }

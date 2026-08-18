@@ -54,9 +54,18 @@ const categoryLabels: Record<string, string> = {
       <div class="border-t border-cream-200 pt-6">
         <h3 class="font-semibold text-sage-800 mb-1">Contact</h3>
         <p class="text-sm text-gray-600 mb-1">{listing.data.contactName}</p>
-        <a href={`mailto:${listing.data.contactEmail}`} class="text-sm text-sage-600 hover:text-sage-800 transition-colors">
-          {listing.data.contactEmail}
-        </a>
+        {listing.data.location && <p class="text-sm text-gray-600 mb-1">{listing.data.location}</p>}
+        {listing.data.contactPhone && <p class="text-sm text-gray-600 mb-1">{listing.data.contactPhone}</p>}
+        {listing.data.contactEmail && (
+          <a href={`mailto:${listing.data.contactEmail}`} class="block text-sm text-sage-600 hover:text-sage-800 transition-colors">
+            {listing.data.contactEmail}
+          </a>
+        )}
+        {listing.data.website && (
+          <a href={listing.data.website} target="_blank" rel="noopener" class="block text-sm text-sage-600 hover:text-sage-800 transition-colors">
+            Visit website
+          </a>
+        )}
       </div>
     </div>
 

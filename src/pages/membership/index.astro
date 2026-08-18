@@ -42,31 +42,13 @@ import Layout from '../../layouts/Layout.astro';
       <div class="bg-white rounded-2xl border border-cream-200 p-8 shadow-sm">
         <h3 class="font-serif text-2xl text-sage-800 mb-2">Adult Membership</h3>
         <div class="text-4xl font-bold text-sage-700 mb-1">£15 <span class="text-base font-normal text-gray-400">/ year</span></div>
-        <p class="text-sm text-gray-500 mb-6">Full membership for individuals aged 18+</p>
-        <ul class="space-y-2 text-sm text-gray-600 mb-8">
-          {['Welcome pack', 'Quarterly newsletters', 'Email news updates', 'Free stock listings', 'Free fleece/wool listings', 'Show invitations', 'Annual calendar', 'Members area access', 'Husbandry advice line', 'Studbook registration support'].map(b => (
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-sage-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {b}
-            </li>
-          ))}
-        </ul>
-        <a href="#join" class="block text-center bg-sage-700 hover:bg-sage-600 text-white font-semibold py-3 rounded-xl transition-colors">Join Now</a>
+        <p class="text-sm text-gray-500">Full membership for individuals aged 18+</p>
       </div>
 
       <div class="bg-sage-50 rounded-2xl border border-sage-200 p-8">
         <h3 class="font-serif text-2xl text-sage-800 mb-2">Junior Membership</h3>
         <div class="text-4xl font-bold text-sage-700 mb-1">£10 <span class="text-base font-normal text-gray-400">/ year</span></div>
-        <p class="text-sm text-gray-500 mb-6">For members under 18</p>
-        <ul class="space-y-2 text-sm text-gray-600 mb-8">
-          {['Welcome pack', 'Newsletters', 'Show invitations', 'Husbandry support', 'Members area access'].map(b => (
-            <li class="flex items-center gap-2">
-              <svg class="w-4 h-4 text-sage-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              {b}
-            </li>
-          ))}
-        </ul>
-        <a href="#join" class="block text-center border border-sage-600 text-sage-700 hover:bg-sage-100 font-semibold py-3 rounded-xl transition-colors">Join Now</a>
+        <p class="text-sm text-gray-500">For members under 18</p>
       </div>
     </div>
 
@@ -90,7 +72,6 @@ import Layout from '../../layouts/Layout.astro';
 
       <div class="space-y-4">
         {[
-          { method: 'Online Payment', desc: 'Pay securely online via the button below. You\'ll receive confirmation and your welcome pack by post.' },
           { method: 'BACS Transfer', desc: 'Bank transfer to the Group account. Email us for sort code and account number, quoting your name.' },
           { method: 'Cheque', desc: 'Make payable to "Portland Sheep Breeders\' Group" and send to the Membership Secretary (address on request).' },
           { method: 'Direct Debit', desc: 'Available after your first year\'s payment. Contact us to set up.' },
